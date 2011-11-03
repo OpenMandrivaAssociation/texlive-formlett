@@ -1,3 +1,9 @@
+# revision 21480
+# category Package
+# catalog-ctan /macros/generic/formlett
+# catalog-date 2010-12-21 20:58:16 +0100
+# catalog-license noinfo
+# catalog-version 2.3
 Name:		texlive-formlett
 Version:	2.3
 Release:	1
@@ -40,6 +46,7 @@ package offers parametrisation of the letters actually sent.
 %doc %{_texmfdistdir}/doc/generic/formlett/prog_manual.tex
 %doc %{_texmfdistdir}/doc/generic/formlett/user_manual.pdf
 %doc %{_texmfdistdir}/doc/generic/formlett/user_manual.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -50,3 +57,5 @@ package offers parametrisation of the letters actually sent.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

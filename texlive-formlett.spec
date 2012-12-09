@@ -47,3 +47,17 @@ package offers parametrisation of the letters actually sent.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.3-2
++ Revision: 752084
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.3-1
++ Revision: 718494
+- texlive-formlett
+- texlive-formlett
+- texlive-formlett
+- texlive-formlett
+

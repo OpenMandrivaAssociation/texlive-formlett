@@ -6,7 +6,7 @@
 # catalog-version 2.3
 Name:		texlive-formlett
 Version:	2.3
-Release:	10
+Release:	11
 Summary:	Letters to multiple recipients
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/formlett

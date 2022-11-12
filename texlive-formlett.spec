@@ -1,18 +1,12 @@
-# revision 21480
-# category Package
-# catalog-ctan /macros/generic/formlett
-# catalog-date 2010-12-21 20:58:16 +0100
-# catalog-license noinfo
-# catalog-version 2.3
 Name:		texlive-formlett
-Version:	2.3
-Release:	11
+Version:	21480
+Release:	1
 Summary:	Letters to multiple recipients
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/formlett
 License:	NOINFO
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -23,12 +17,12 @@ A package for multiple letters from the same basic source; the
 package offers parametrisation of the letters actually sent.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -40,24 +34,10 @@ package offers parametrisation of the letters actually sent.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.3-2
-+ Revision: 752084
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.3-1
-+ Revision: 718494
-- texlive-formlett
-- texlive-formlett
-- texlive-formlett
-- texlive-formlett
-

@@ -1,6 +1,6 @@
 Name:		texlive-formlett
 Version:	21480
-Release:	1
+Release:	2
 Summary:	Letters to multiple recipients
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/formlett

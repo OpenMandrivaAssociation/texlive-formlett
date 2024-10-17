@@ -3,7 +3,7 @@ Version:	21480
 Release:	2
 Summary:	Letters to multiple recipients
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/generic/formlett
+URL:		https://www.ctan.org/tex-archive/macros/generic/formlett
 License:	NOINFO
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.doc.r%{version}.tar.xz

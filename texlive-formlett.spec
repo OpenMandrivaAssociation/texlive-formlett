@@ -1,43 +1,23 @@
-Name:		texlive-formlett
-Version:	21480
-Release:	2
+%global tl_name formlett
+%global tl_revision 21480
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.3
+Release:	%{tl_revision}.1
 Summary:	Letters to multiple recipients
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/generic/formlett
-License:	NOINFO
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.doc.r%{version}.tar.xz
+License:	gpl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/formlett.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A package for multiple letters from the same basic source; the
-package offers parametrisation of the letters actually sent.
+A package for multiple letters from the same basic source; the package
+offers parametrisation of the letters actually sent.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/formlett/formlett.sty
-%doc %{_texmfdistdir}/doc/generic/formlett/prog_manual.pdf
-%doc %{_texmfdistdir}/doc/generic/formlett/prog_manual.tex
-%doc %{_texmfdistdir}/doc/generic/formlett/user_manual.pdf
-%doc %{_texmfdistdir}/doc/generic/formlett/user_manual.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
